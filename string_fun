@@ -1,0 +1,40 @@
+def name_checker():
+    '''
+    Description: 
+    Checks to see if a prompted name matches my name
+    Parameters:
+    None
+    Returns:
+    The guess of the user of my name
+    '''
+    first_name = "bea "
+    last_name = "gilfix"
+    guess = str(input("Guess my name (first last): "))
+    if guess.lower() == (first_name + last_name):
+        print("\nThats is my name!")
+    else:
+        print("\nNice try, but incorrect")
+    return guess
+
+def no_vowels(string):
+    '''
+    Description:
+    Removes all the vowels from the inputted string
+    Parameters:
+    String to remove vowels from
+    Returns:
+    String with vowels removed
+    '''
+    no_vowel = ""
+    for letter in string:
+        l_letter = letter.lower()
+        if l_letter == "a" or l_letter == "e" or l_letter == "i" or l_letter == "o" or\
+        l_letter == "u":
+            continue
+        no_vowel += letter
+    return(no_vowel)
+guess = name_checker()
+print(f"\nYou guessed {guess}\n\nWithout vowels thats {no_vowels(guess)}\n\nAnd in less civilized times, it would be {guess} the Barbarian")
+
+
+
