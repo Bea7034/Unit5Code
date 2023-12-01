@@ -1,12 +1,21 @@
+'''
+Name: Bea Gilfix
+Date: 11/30
+Program Description:
+Takes input from the user and checks to see if it matches my name, 
+also removes all the vowels from it and used it in a string referencing former titles used by warriors.
+'''
+
+
 def name_checker():
-    '''
-    Description: 
+    """
+    Description:
     Checks to see if a prompted name matches my name
     Parameters:
     None
     Returns:
     The guess of the user of my name
-    '''
+    """
     first_name = "bea "
     last_name = "gilfix"
     guess = str(input("Guess my name (first last): "))
@@ -16,25 +25,35 @@ def name_checker():
         print("\nNice try, but incorrect")
     return guess
 
+
 def no_vowels(string):
-    '''
+    """
     Description:
     Removes all the vowels from the inputted string
     Parameters:
     String to remove vowels from
     Returns:
     String with vowels removed
-    '''
+    """
     no_vowel = ""
     for letter in string:
-        l_letter = letter.lower()
-        if l_letter == "a" or l_letter == "e" or l_letter == "i" or l_letter == "o" or\
-        l_letter == "u":
+        l_letter = letter.lower() #l in l_letter stands for lowercase, lowercase letter
+        if (
+            l_letter == "a"
+            or l_letter == "e"
+            or l_letter == "i"
+            or l_letter == "o"
+            or l_letter == "u"
+        ):
             continue
         no_vowel += letter
-    return(no_vowel)
-guess = name_checker()
-print(f"\nYou guessed {guess}\n\nWithout vowels thats {no_vowels(guess)}\n\nAnd in less civilized times, it would be {guess} the Barbarian")
+    return no_vowel
 
-
-
+def main():
+    guess = name_checker()
+    print(
+f"\nYou guessed {guess}\n\nWithout vowels thats {no_vowels(guess)}\n\nAnd in less civilized times, it would be {guess} the Barbarian"
+)
+    
+if __name__ == "__main__":
+	main()
